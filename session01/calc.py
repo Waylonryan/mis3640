@@ -1,4 +1,4 @@
-#print(8 + 30 + 2018)
+# print(8 + 30 + 2018)
 
 minutes = 42
 seconds = 42
@@ -10,7 +10,7 @@ print('The time duration is', minutes * 60 + seconds, 'seconds.')
 
 # km_per_mile = 1.61
 # km = 10
-# miles = km / km_per_mile 
+# miles = km / km_per_mile
 
 # pace = minutes / miles
 # mph = miles / hours

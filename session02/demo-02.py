@@ -21,6 +21,6 @@ print('Pi equals {:010.2f}'.format(3.14159265))
 
 print('Growth rate: {:.2f}%'.format(2.5))
 
-print('Coordinates of Babson: {lat}, {lon}'.format(lon='71.27W', lat='42.30N' ))
+print('Coordinates of Babson: {lat}, {lon}'.format(lon='71.27W', lat='42.30N'))
 
-print('Coordinates of Babson: %s, %s' %('71.27W', '42.30N' ))
+print('Coordinates of Babson: %s, %s' % ('71.27W', '42.30N'))
