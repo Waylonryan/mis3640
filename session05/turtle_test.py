@@ -1,8 +1,14 @@
-from turtle_shape import square, polygon
+from turtle_shape import square, polygon, circle, move
 import turtle
 
 jack = turtle.Turtle()
 
-polygon(jack, 3, 200)
+move(jack, -100, 0)
+
+square(jack, 100)
+
+move(jack, 100, 0)
+
+circle(jack, 100)
 
 turtle.mainloop()
