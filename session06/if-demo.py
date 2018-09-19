@@ -65,14 +65,18 @@ def cigar_party(cigars, is_weekend):
 
 
 def countdown(n):
+    import time
+    time.sleep(1)
     if n <= 0:
         print('Blastoff!')
     else:
         print(n)
+
         countdown(n-1)
 
 
-# countdown(5)
+countdown(5)
+
 
 def fabonacci(n):
     if n == 1 or n == 2:
@@ -90,4 +94,4 @@ def factorial(n):
         return factorial(n-1)*n
 
 
-print(factorial(3))
+# print(factorial(3))
