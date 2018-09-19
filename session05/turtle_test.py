@@ -1,4 +1,4 @@
-from mypolygon import square, polygon
+from turtle_shape import square, polygon
 import turtle
 
 jack = turtle.Turtle()

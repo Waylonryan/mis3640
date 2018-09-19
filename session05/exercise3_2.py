@@ -22,8 +22,8 @@ def draw_spiral(t, n, length=3, a=0.1, b=0.0002):
         theta += dtheta
 
 
-# create the world and bob
-bob = turtle.Turtle()
-draw_spiral(bob, n=1000)
+# create the world and jack
+jack = turtle.Turtle()
+draw_spiral(jack, n=1000)
 
 turtle.mainloop()

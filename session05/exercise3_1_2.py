@@ -27,17 +27,17 @@ def flower(t, n, r, angle):
         t.lt(360.0 / n)
 
 
-bob = turtle.Turtle()
+jack = turtle.Turtle()
 
 # draw a sequence of three flowers, as shown in the book.
-move(bob, -100, 0)
-flower(bob, 7, 60.0, 60.0)
+move(jack, -100, 0)
+flower(jack, 7, 60.0, 60.0)
 
-move(bob, 0, 0)
-flower(bob, 10, 40.0, 80.0)
+move(jack, 0, 0)
+flower(jack, 10, 40.0, 80.0)
 
-move(bob, 100, 0)
-flower(bob, 20, 140.0, 20.0)
+move(jack, 100, 0)
+flower(jack, 20, 140.0, 20.0)
 
-bob.hideturtle()
+jack.hideturtle()
 turtle.mainloop()
