@@ -1,5 +1,6 @@
 # http://www.python-course.eu/towers_of_hanoi.php
 
+
 def move(n, source, bridge, destination):
     if n == 1:
         print('%s --> %s' % (source, destination))
@@ -12,5 +13,4 @@ def move(n, source, bridge, destination):
         move(n - 1, bridge, source, destination)
 
 
-move(3, 'A', 'B', 'C')
-
+move(6, 'A', 'B', 'C')

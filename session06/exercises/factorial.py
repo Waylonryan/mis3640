@@ -8,7 +8,7 @@ def factorial(n):
     return result
 
 
-print(factorial(1))
-print(factorial(3))
+# print(factorial(1))
+# print(factorial(3))
 
 print(factorial(10))
