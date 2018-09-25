@@ -9,7 +9,10 @@ def is_special(n):
     """
     If the number, n, is divisible by 4 (for example, 2020), return True. Return False if n is divisible by 100 (for example, 300); the only exception is when n is divisible by 400(for example, 2400), return True.
     """
-    pass
+    if n % 4 != 0 or n % 100 == 0 and n % 400 != 0:
+        return False
+    else:
+        return True
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
@@ -31,7 +34,7 @@ def detect(a, b, n):
     """
     Returns True if either a or b is n, or if the sum or difference or product of a and b is n. Return False otherwise.
     """
-    pass
+    return a == n or b == n or a + b == n or abs(a - b) == n or a*b == n
 
 
 # When you've completed your function, uncomment the
@@ -53,11 +56,15 @@ Write a function with loops that computes the sum of all cubes of all the odd nu
 
 
 def sum_cubes_of_odd_numbers(n):
-    pass
+    result = 0
+    for x in range(n + 1):
+        if x % 2 == 1:
+            result += x ** 3
+    return result
 
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# print(sum_cubes_of_odd_numbers(1))
-# print(sum_cubes_of_odd_numbers(10))
+print(sum_cubes_of_odd_numbers(1))
+print(sum_cubes_of_odd_numbers(10))
