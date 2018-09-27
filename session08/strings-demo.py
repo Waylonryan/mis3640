@@ -39,9 +39,18 @@ def count(s, letter):
     return c
 
 
-print(count(team, 'a'))  # should be 2
+# print(count(team, 'a'))  # should be 2
 
-print(count(team, ' '))
+# print(count(team, ' '))
 
-new_team = team.upper()
-print(new_team)
+# new_team = team.upper()
+# print(new_team)
+
+
+def in_both(word1, word2):
+    for letter in word1:
+        if letter in word2:
+            print(letter)
+
+
+in_both('babe sone', 'colle ge')

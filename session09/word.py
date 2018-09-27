@@ -1,8 +1,25 @@
+fin = open("session09/words.txt")
+# line = fin.readline()
+# word = line.strip()
+# print(word)
+
+# counter = 0
+# for line in fin:
+#     word = line.strip()
+#     counter += 1
+#     # print(word)
+# print(counter)
+
+
 def read_long_words():
     """
     prints only the words with more than 20 characters
     """
-    pass
+    fin = open('words.txt')
+    for line in fin:
+        word = line.strip()
+        if len(word) > 20:
+            print(word)
 
 
 read_long_words()
@@ -12,11 +29,17 @@ def has_no_e(word):
     """
     returns True if the given word doesn’t have the letter “e” in it.
     """
-    pass
+    # for letter in word:
+    #     # if letter == 'e' or letter=='E':
+    #     if letter.lower() == 'e':
+    #         return False
+    # return True
+    return not 'e' in word.lower()
 
 
 print(has_no_e('Babson'))
 print(has_no_e('College'))
+print(has_no_e('Epslon'))
 
 
 def avoids(word, forbidden):
@@ -27,8 +50,8 @@ def avoids(word, forbidden):
     pass
 
 
-print(avoids('Babson', 'ab'))
-print(avoids('College', 'ab'))
+# print(avoids('Babson', 'ab'))
+# print(avoids('College', 'ab'))
 
 
 def uses_only(word, available):
@@ -39,8 +62,8 @@ def uses_only(word, available):
     pass
 
 
-print(uses_only('Babson', 'aBbsonxyz'))
-print(uses_only('college', 'aBbsonxyz'))
+# print(uses_only('Babson', 'aBbsonxyz'))
+# print(uses_only('college', 'aBbsonxyz'))
 
 
 def uses_all(word, required):
@@ -51,8 +74,8 @@ def uses_all(word, required):
     pass
 
 
-print(uses_all('Babson', 'abs'))
-print(uses_all('college', 'abs'))
+# print(uses_all('Babson', 'abs'))
+# print(uses_all('college', 'abs'))
 
 
 def is_abecedarian(word):
@@ -63,5 +86,5 @@ def is_abecedarian(word):
     pass
 
 
-print(is_abecedarian('abs'))
-print(is_abecedarian('college'))
+# print(is_abecedarian('abs'))
+# print(is_abecedarian('college'))
