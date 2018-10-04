@@ -13,4 +13,4 @@ response_text = f.read().decode('utf-8')
 response_data = json.loads(response_text)
 # print(response_data)
 
-# How do we get current temperature
+# How do we get current temperature?
