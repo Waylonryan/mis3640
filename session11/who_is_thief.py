@@ -1,4 +1,3 @@
-
 """
 Four suspects; one of them is a thief. In interrogation
     John said: I am not the thief.
@@ -11,3 +10,11 @@ Could you find out who is the thief?
 
 """
 suspects = ['John', 'Paul', 'George', 'Ringo']
+
+for name in suspects:
+    if sum([
+        "John" != name,
+        "George" == name,
+        "Ringo" == name,
+            "Ringo" != name]) == 3:
+        print(name)
