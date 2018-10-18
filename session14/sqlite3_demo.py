@@ -1,5 +1,6 @@
 import sqlite3
-db = sqlite3.connect('stocks.db')
+
+db = sqlite3.connect('session14/stocks.db')
 c = db.cursor()
 c.execute('create table portfolio (symbol text, shares integer, price real)')
 db.commit()
@@ -14,8 +15,8 @@ stocks = [
 c.executemany('insert into portfolio values (?,?,?)', stocks)
 db.commit()
 
-for row in db.execute('select * from portfolio'):
-    print(row)
+# for row in db.execute('select * from portfolio'):
+#     print(row)
 
 
 min_price = 150

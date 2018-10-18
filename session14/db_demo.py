@@ -28,7 +28,7 @@ ROSTER = ('Aaron Wendell',
 
 GRADES = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-']
 
-db = dbm.open('db_student', 'c')
+db = dbm.open('session14/db_student', 'c')
 
 for student in ROSTER:
     db[student] = random.choice(GRADES)
