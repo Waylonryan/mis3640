@@ -21,11 +21,7 @@ def process_file(filename, skip_header):
     for line in fp:
         if line.startswith('*** END OF THIS PROJECT'):
             break
-        for word in line.split():
-            word = word.strip(strippables)
-            word = word.lower()
-
-            hist[word] = hist.get(word, 0) + 1
+        # INSERT CODE BELOW
 
     return hist
 
@@ -42,12 +38,12 @@ def skip_gutenberg_header(fp):
 
 def total_words(hist):
     """Returns the total of the frequencies in a histogram."""
-    return sum(hist.values())
+    pass
 
 
 def different_words(hist):
     """Returns the number of different words in a histogram."""
-    return len(hist)
+    pass
 
 
 def most_common(hist):
@@ -88,8 +84,8 @@ def random_word(hist):
 def main():
     hist = process_file('session13/Pride and Prejudice.txt', skip_header=True)
     # print(hist)
-    print('Total number of words:', total_words(hist))
-    print('Number of different words:', different_words(hist))
+    # print('Total number of words:', total_words(hist))
+    # print('Number of different words:', different_words(hist))
 
     # t = most_common(hist)
     # print('The most common words are:')
