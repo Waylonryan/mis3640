@@ -11,7 +11,7 @@ def process_file(filename, skip_header):
     returns: map from each word to the number of times it appears.
     """
     hist = {}
-    fp = open(filename, encoding='UTF8')
+    fp = open(filename, encoding='utf8')
 
     if skip_header:
         skip_gutenberg_header(fp)
@@ -53,19 +53,29 @@ def different_words(hist):
     return len(hist)
 
 
-def most_common(hist):
+def most_common(hist, excluding_stopwords=True):
     """Makes a list of word-freq pairs(tuples) in descending order of frequency.
 
     hist: map from word to frequency
+    excluding_stopwords: a boolean value. If it is True, do not include any stopwords in the list.
 
     returns: list of (frequency, word) pairs
     """
     t = []
-    for key, value in hist.items():
-        t.append((value, key))
 
-    t.sort()
-    t.reverse()
+    stopwords = process_file('session13/stopwords.txt', False)
+
+    stopwords = list(stopwords.keys())
+    # print(stopwords)
+
+    for word, freq in hist.items():
+        if excluding_stopwords:
+            if word in stopwords:
+                continue
+
+        t.append((freq, word))
+
+    t.sort(reverse=True)
     return t
 
 
@@ -110,12 +120,12 @@ def main():
     print('Total number of words:', total_words(hist))
     print('Number of different words:', different_words(hist))
 
-    t = most_common(hist)
+    t = most_common(hist, False)
 
-    print_most_common(hist, 20)
     print('The most common words are:')
     for freq, word in t[0:20]:
         print(word, '\t', freq)
+    print_most_common(hist, 20)
 
     words = process_file('session13/words.txt', skip_header=False)
 

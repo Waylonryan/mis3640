@@ -2,13 +2,14 @@ import random
 import csv
 from pprint import pprint
 
+
 def call(filename):
     '''
     Among the names that are called least times,
     return one name randomly. Update database after each call.
 
     filename: the name of csv file
-    
+
     returns one name
     '''
     roster = display_all(filename)
@@ -50,9 +51,10 @@ def display_all(filename):
 
 def main():
     ROSTER_FILE = 'misc/roster.csv'
-    pprint(display_all(ROSTER_FILE))
-    # print(call(ROSTER_FILE))
     # pprint(display_all(ROSTER_FILE))
+    print(call(ROSTER_FILE))
+    # pprint(display_all(ROSTER_FILE))
+
 
 if __name__ == '__main__':
     main()
