@@ -6,7 +6,7 @@ class Time:
 
 # time = Time()
 # time.hour = 1
-# time.minute = 50
+# time.minute = 20
 # time.second = 30
 
 # print(time.hour, time.minute, time.second)
@@ -92,6 +92,15 @@ def increment(time, seconds):
 
 
 """"""""""""""""""""""""""""""""""""
+# Exercise 3
+""""""""""""""""""""""""""""""""""""
+
+
+def increment_2(time, seconds):
+    """return a Time object after incrementing"""
+
+
+""""""""""""""""""""""""""""""""""""
 # Designed Development
 """"""""""""""""""""""""""""""""""""
 
@@ -117,8 +126,13 @@ def int_to_time(seconds):
     return time
 
 
+def add_time_2(t1, t2):
+    seconds = time_to_int(t1) + time_to_int(t2)
+    return int_to_time(seconds)
+
+
 """"""""""""""""""""""""""""""""""""
-# Exercise 3
+# Exercise 4
 """"""""""""""""""""""""""""""""""""
 
 
@@ -169,7 +183,7 @@ def add_time2(t1, t2):
 
 
 """"""""""""""""""""""""""""""""""""
-# Exercise 4
+# Exercise 5
 """"""""""""""""""""""""""""""""""""
 
 
@@ -200,9 +214,31 @@ def main():
     print_time(run_time)
 
     # what time does the movie end?
-    end_time = add_time2(noon_time, run_time)
+    end_time = add_time(noon_time, run_time)
     print('Ends at', end=' ')
     print_time(end_time)
+
+    print('Does it end after it begins?', end=' ')
+    print(is_after(end_time, noon_time))
+
+    print('Home by', end=' ')
+    travel_time = 600      # 10 minutes
+    home_time = increment(end_time, travel_time)
+    print_time(home_time)
+
+    race_time = Time()
+    race_time.hour = 1
+    race_time.minute = 34
+    race_time.second = 5
+
+    print('Half marathon time', end=' ')
+    print_time(race_time)
+
+    distance = 13.1       # miles
+    pace = mul_time(race_time, 1 / distance)
+
+    print('Time per mile', end=' ')
+    print_time(pace)
 
 
 # if __name__ == '__main__':
