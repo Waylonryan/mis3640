@@ -19,10 +19,10 @@ class Time:
 # print(later.hour, later.minute, later.second)
 
 
-
 """"""""""""""""""""""""""""""""""""
 # Exercise 1
 """"""""""""""""""""""""""""""""""""
+
 
 def print_time(t):
     """Prints a string representation of the time.
@@ -42,11 +42,10 @@ def is_after(t1, t2):
 # print(is_after(later, time))
 
 
-
-
 """"""""""""""""""""""""""""""""""""
 # Prototyping
 """"""""""""""""""""""""""""""""""""
+
 
 def add_time(t1, t2):
     """Adds two time objects.
@@ -96,6 +95,7 @@ def increment(time, seconds):
 # Designed Development
 """"""""""""""""""""""""""""""""""""
 
+
 def time_to_int(time):
     """Computes the number of seconds since midnight.
 
@@ -117,10 +117,10 @@ def int_to_time(seconds):
     return time
 
 
-
 """"""""""""""""""""""""""""""""""""
 # Exercise 3
 """"""""""""""""""""""""""""""""""""
+
 
 def substract_time(t1, t2):
     """Substracts two time objects.
@@ -134,10 +134,10 @@ def substract_time(t1, t2):
 # print_time(substract_time(time, later))
 
 
-
 """"""""""""""""""""""""""""""""""""
 # Error handling
 """"""""""""""""""""""""""""""""""""
+
 
 def valid_time(time):
     """Checks whether a Time object satisfies the invariants.
@@ -153,8 +153,6 @@ def valid_time(time):
     return True
 
 
-
- 
 def add_time2(t1, t2):
     """Adds two time objects.
 
@@ -170,15 +168,15 @@ def add_time2(t1, t2):
 # print_time(done)
 
 
-
 """"""""""""""""""""""""""""""""""""
 # Exercise 4
 """"""""""""""""""""""""""""""""""""
 
+
 def mul_time(t1, factor):
     """Multiplies a Time object by a factor."""
     pass
-    
+
 
 # print_time(time)
 # print('after multiplied by 5:', end=' ')
@@ -207,5 +205,5 @@ def main():
     print_time(end_time)
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
