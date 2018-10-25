@@ -3,6 +3,13 @@ from datetime import datetime
 
 def days_until_birthday(birthday):
     """How long until my next birthday?"""
+    today = datetime.today()
+
+    next_birthday = datetime(today.year, birthday.month, birthday.day)
+    if next_birthday <= today:
+        next_birthday = datetime(today.year+1, birthday.month, birthday.day)
+    delta = next_birthday - today
+    return delta.days
 
 
 def double_day(b1, b2):
@@ -17,7 +24,8 @@ def datetime_exercises():
     """Exercise solutions."""
 
     # print today's day of the week
-    pass
+    today = datetime.today()
+    print(today.weekday())
 
     # compute the number of days until the next birthday
     # (note that it usually gets rounded down)

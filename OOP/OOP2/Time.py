@@ -4,9 +4,10 @@ class Time:
     attributes: hour, minute, second
     """
 
+
 # time = Time()
-# time.hour = 1
-# time.minute = 20
+# time.hour = 3
+# time.minute = 12
 # time.second = 30
 
 # print(time.hour, time.minute, time.second)
@@ -29,6 +30,8 @@ def print_time(t):
 
     t: Time object
     """
+    print('{:02d}:{:02d}:{:02d}'.format(t.hour, t.minute, t.second))
+
 
 # print_time(time)
 # print_time(later)
@@ -36,6 +39,7 @@ def print_time(t):
 
 def is_after(t1, t2):
     """Returns True if t1 is after t2; false otherwise."""
+    return t1.hour > t2.hour or (t1.hour == t2.hour and t1.minute > t2.minute) or (t1.hour == t2.hour and t1.minute == t2.minute and t1.second > t2.second)
 
 
 # print(is_after(time, later))
@@ -51,10 +55,8 @@ def add_time(t1, t2):
     """Adds two time objects.
 
     t1, t2: Time
-
     returns: Time
-
-    TO-DO: improve this function
+    TODO: improve this function
     """
     sum = Time()
     sum.hour = t1.hour + t2.hour
@@ -62,8 +64,28 @@ def add_time(t1, t2):
     sum.second = t1.second + t2.second
     return sum
 
-# Uncomment below for testing
 
+def add_time2(t1, t2):
+    """Adds two time objects.
+
+    t1, t2: Time
+    returns: Time
+    TODO: improve this function # DONE!
+    """
+    sum = Time()
+    sum.hour = t1.hour + t2.hour
+    sum.minute = t1.minute + t2.minute
+    sum.second = t1.second + t2.second
+    if sum.second >= 60:
+        sum.second -= 60
+        sum.minute += 1
+    if sum.minute >= 60:
+        sum.minute -= 60
+        sum.hour += 1
+    return sum
+
+
+# Uncomment below for testing
 # start = Time()
 # start.hour = 9
 # start.minute = 45
@@ -74,7 +96,7 @@ def add_time(t1, t2):
 # duration.minute = 35
 # duration.second = 0
 
-# done = add_time(start, duration)
+# done = add_time2(start, duration)
 # print_time(done)
 
 
@@ -98,6 +120,16 @@ def increment(time, seconds):
 
 def increment_2(time, seconds):
     """return a Time object after incrementing"""
+    result = Time()
+    result.hour, result.minute, result.second = time.hour, time.minute, time.second
+    result.second += seconds
+    if result.second >= 60:
+        result.second -= 60
+        result.minute += 1
+    if result.minute >= 60:
+        result.minute -= 60
+        result.hour += 1
+    return result
 
 
 """"""""""""""""""""""""""""""""""""
@@ -143,6 +175,9 @@ def substract_time(t1, t2):
 
     returns: Time
     """
+    seconds = time_to_int(t1) - time_to_int(t2)
+    return int_to_time(seconds)
+
 
 # print_time(substract_time(done, duration))
 # print_time(substract_time(time, later))
@@ -175,11 +210,17 @@ def add_time2(t1, t2):
     returns: Time
     """
     # assert valid_time(t1) and valid_time(t2)
+
+    if not valid_time(t1) or not valid_time(t2):
+        raise ValueError('invalid Time object in add_time, stupid!')
     seconds = time_to_int(t1) + time_to_int(t2)
     return int_to_time(seconds)
 
+
 # done = add_time2(start, duration)
 # print_time(done)
+# another = add_time2(done, duration)
+# print_time(another)
 
 
 """"""""""""""""""""""""""""""""""""
@@ -189,12 +230,15 @@ def add_time2(t1, t2):
 
 def mul_time(t1, factor):
     """Multiplies a Time object by a factor."""
-    pass
+    if not valid_time(t1):
+        raise ValueError('invalid Time object in mul_time, stupid!')
+    seconds = time_to_int(t1) * factor
+    return int_to_time(int(seconds))
 
 
-# print_time(time)
+# print_time(duration)
 # print('after multiplied by 5:', end=' ')
-# print_time(mul_time(time, 5))
+# print_time(mul_time(duration, 5))
 
 
 def main():
@@ -214,7 +258,7 @@ def main():
     print_time(run_time)
 
     # what time does the movie end?
-    end_time = add_time(noon_time, run_time)
+    end_time = add_time2(noon_time, run_time)
     print('Ends at', end=' ')
     print_time(end_time)
 
@@ -223,7 +267,7 @@ def main():
 
     print('Home by', end=' ')
     travel_time = 600      # 10 minutes
-    home_time = increment(end_time, travel_time)
+    home_time = increment_2(end_time, travel_time)
     print_time(home_time)
 
     race_time = Time()
@@ -241,5 +285,5 @@ def main():
     print_time(pace)
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
