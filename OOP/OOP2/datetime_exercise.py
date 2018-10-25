@@ -17,9 +17,7 @@ def datetime_exercises():
     """Exercise solutions."""
 
     # print today's day of the week
-    today = datetime.today()
-    print(today.weekday())
-    print(today.strftime('%A'))
+    pass
 
     # compute the number of days until the next birthday
     # (note that it usually gets rounded down)
